@@ -1,0 +1,47 @@
+// Import Graphgame templates
+import templates from "graphgame";
+
+// Initialize Graphgame
+initialize!();
+
+// Define the PlayerControl behavior
+createBehavior!("PlayerControl", {
+  setValAction!("base.velocity.x", {
+    const left = keyIsDown("ArrowLeft");
+    const right = keyIsDown("ArrowRight");
+    const vx = (right - left) * 1; // Move speed
+    vx
+  });
+});
+
+// Define the Louie object (the player)
+createObject!("Louie", {
+  base: {
+    transform: {
+      x: 0,
+      y: 0
+    },
+    velocity: {
+      x: 0,
+      y: 0
+    },
+    size: 1,
+    color: "blue"
+  },
+  behaviors: ["PlayerControl"]
+});
+
+// Define the Platform object
+createObject!("Platform", {
+  base: {
+    transform: {
+      x: 0,
+      y: -2
+    },
+    size: {
+      x: 10,
+      y: 1
+    },
+    color: "gray"
+  }
+});
