@@ -29,6 +29,7 @@ createObject!("Louie", {
     color: "blue"
   },
   behaviors: ["PlayerControl"]
+}
 });
 
 // Define the Platform object
