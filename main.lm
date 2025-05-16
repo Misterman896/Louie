@@ -10,7 +10,7 @@ createBehavior!("PlayerControl", {
     const left = keyIsDown("ArrowLeft");
     const right = keyIsDown("ArrowRight");
     const vx = (right - left) * 1; // Move speed
-    vx
+    vx;
   });
 });
 
@@ -29,7 +29,6 @@ createObject!("Louie", {
     color: "blue"
   },
   behaviors: ["PlayerControl"]
-}
 });
 
 // Define the Platform object
